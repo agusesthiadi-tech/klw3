@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Sekolah - SDN 3 Kaliwinasuh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; color: #333; overflow-x: hidden; }
+        .font-lora { font-family: 'Lora', serif; }
+        .text-gold { color: #D4AF37; }
+        .bg-gold { background-color: #D4AF37; }
+        .bg-light-green { background-color: #E8F5E9; }
+        .text-light-green { color: #4CAF50; }
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .page-hero { background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://picsum.photos/seed/school/1920/600.jpg') center/cover; }
+        .navbar-scrolled { background-color: rgba(255,255,255,0.97); box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .mobile-menu { transform: translateX(100%); transition: transform 0.3s ease; }
+        .mobile-menu.active { transform: translateX(0); }
+        .data-table th { width: 40%; text-align: left; font-weight: 500; color: #4b5563; background: #f9fafb; }
+        .data-table th, .data-table td { padding: 0.75rem 1rem; border-bottom: 1px solid #e5e7eb; vertical-align: top; }
+        .data-table tr:last-child th, .data-table tr:last-child td { border-bottom: 0; }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-40 bg-white shadow-md transition-all duration-300">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-light-green rounded-full flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-gold text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-800">SDN 3 Kaliwinasuh</h1>
+                        <p class="text-xs text-gray-600">Sekolah Ramah Anak</p>
+                    </div>
+                </a>
+
+                <nav class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-gold transition-colors">Beranda</a>
+                    <a href="profil.html" class="text-gold font-medium">Profil</a>
+                    <a href="index.html#kegiatan" class="text-gray-700 hover:text-gold transition-colors">Kegiatan</a>
+                    <a href="index.html#prestasi" class="text-gray-700 hover:text-gold transition-colors">Prestasi</a>
+                    <a href="index.html#galeri" class="text-gray-700 hover:text-gold transition-colors">Galeri</a>
+                    <a href="index.html#kontak" class="text-gray-700 hover:text-gold transition-colors">Kontak</a>
+                </nav>
+
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700" aria-label="Buka menu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-50 md:hidden">
+            <div class="p-4">
+                <button id="close-menu-btn" class="text-gray-700 mb-8" aria-label="Tutup menu">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+                <nav class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-gray-700 hover:text-gold transition-colors">Beranda</a>
+                    <a href="profil.html" class="text-gold font-medium">Profil</a>
+                    <a href="index.html#kegiatan" class="text-gray-700 hover:text-gold transition-colors">Kegiatan</a>
+                    <a href="index.html#prestasi" class="text-gray-700 hover:text-gold transition-colors">Prestasi</a>
+                    <a href="index.html#galeri" class="text-gray-700 hover:text-gold transition-colors">Galeri</a>
+                    <a href="index.html#kontak" class="text-gray-700 hover:text-gold transition-colors">Kontak</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="page-hero pt-32 pb-16 text-white text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4">Profil Sekolah</h2>
+            <p class="text-lg md:text-xl font-lora">SD Negeri 3 Kaliwinasuh</p>
+            <div class="w-24 h-1 bg-gold mx-auto mt-6"></div>
+        </div>
+    </section>
+
+    <!-- Ringkasan -->
+    <section class="py-16 bg-light-green">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="bg-white p-8 rounded-lg shadow-md mb-10">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Tentang Sekolah</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    SD Negeri 3 Kaliwinasuh adalah satuan pendidikan jenjang Sekolah Dasar (SD) berstatus negeri
+                    yang berada di Desa Kaliwinasuh, Kecamatan Purwareja Klampok, Kabupaten Banjarnegara, Jawa Tengah.
+                    Sekolah berada di bawah naungan Kementerian Pendidikan dan Kebudayaan dan menyelenggarakan
+                    pembelajaran pada pagi hari, enam hari dalam seminggu.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center card-hover">
+                    <i class="fas fa-award text-gold text-3xl mb-3"></i>
+                    <p class="text-2xl font-bold text-gray-800">A</p>
+                    <p class="text-sm text-gray-600">Akreditasi</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center card-hover">
+                    <i class="fas fa-school text-gold text-3xl mb-3"></i>
+                    <p class="text-2xl font-bold text-gray-800">Negeri</p>
+                    <p class="text-sm text-gray-600">Status Sekolah</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center card-hover">
+                    <i class="fas fa-calendar-day text-gold text-3xl mb-3"></i>
+                    <p class="text-2xl font-bold text-gray-800">6 Hari</p>
+                    <p class="text-sm text-gray-600">Belajar per Minggu</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center card-hover">
+                    <i class="fas fa-sun text-gold text-3xl mb-3"></i>
+                    <p class="text-2xl font-bold text-gray-800">Pagi</p>
+                    <p class="text-sm text-gray-600">Waktu Belajar</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Lengkap -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800 mb-4">Informasi Lengkap</h3>
+                <div class="w-24 h-1 bg-gold mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Identitas -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                    <div class="bg-gray-800 text-white px-5 py-3 flex items-center">
+                        <i class="fas fa-id-card text-gold mr-3"></i>
+                        <h4 class="font-semibold">Identitas Satuan Pendidikan</h4>
+                    </div>
+                    <table class="data-table w-full text-sm">
+                        <tr><th>Nama</th><td>SD Negeri 3 Kaliwinasuh</td></tr>
+                        <tr><th>NPSN</th><td>20303813</td></tr>
+                        <tr><th>Jenjang</th><td>SD</td></tr>
+                        <tr><th>Status Sekolah</th><td>Negeri</td></tr>
+                        <tr><th>Waktu Penyelenggaraan</th><td>6 hari / Pagi hari</td></tr>
+                        <tr><th>Naungan</th><td>Kementerian Pendidikan dan Kebudayaan</td></tr>
+                    </table>
+                </div>
+
+                <!-- Alamat -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                    <div class="bg-gray-800 text-white px-5 py-3 flex items-center">
+                        <i class="fas fa-map-marker-alt text-gold mr-3"></i>
+                        <h4 class="font-semibold">Alamat</h4>
+                    </div>
+                    <table class="data-table w-full text-sm">
+                        <tr><th>Alamat</th><td>Dusun Karang Pucung, Desa Kaliwinasuh RT. 01 RW. 09</td></tr>
+                        <tr><th>Desa / Kelurahan</th><td>Kaliwinasuh</td></tr>
+                        <tr><th>Kecamatan</th><td>Purwareja Klampok</td></tr>
+                        <tr><th>Kabupaten</th><td>Banjarnegara</td></tr>
+                        <tr><th>Provinsi</th><td>Jawa Tengah</td></tr>
+                        <tr><th>Kode Pos</th><td>53474</td></tr>
+                    </table>
+                </div>
+
+                <!-- Dokumen -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                    <div class="bg-gray-800 text-white px-5 py-3 flex items-center">
+                        <i class="fas fa-file-signature text-gold mr-3"></i>
+                        <h4 class="font-semibold">Dokumen dan Perizinan</h4>
+                    </div>
+                    <table class="data-table w-full text-sm">
+                        <tr><th>No. SK Pendirian</th><td>421.2/029/II/36/84</td></tr>
+                        <tr><th>Tanggal SK Pendirian</th><td>15 Oktober 1984</td></tr>
+                        <tr><th>Akreditasi</th><td>A</td></tr>
+                        <tr><th>No. SK Akreditasi</th><td>044/BANSM-JTG/SK/X/2018</td></tr>
+                        <tr><th>Tanggal SK Akreditasi</th><td>16 Oktober 2018</td></tr>
+                        <tr><th>Sertifikasi ISO</th><td>Belum bersertifikat</td></tr>
+                    </table>
+                </div>
+
+                <!-- Sarana -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover">
+                    <div class="bg-gray-800 text-white px-5 py-3 flex items-center">
+                        <i class="fas fa-plug text-gold mr-3"></i>
+                        <h4 class="font-semibold">Sarana Prasarana</h4>
+                    </div>
+                    <table class="data-table w-full text-sm">
+                        <tr><th>Sumber Listrik</th><td>PLN</td></tr>
+                        <tr><th>Akses Internet</th><td>Indosat IM3</td></tr>
+                    </table>
+                    <div class="p-4 flex gap-3 text-sm text-gray-600">
+                        <div class="flex-1 bg-light-green rounded-lg p-3 text-center">
+                            <i class="fas fa-bolt text-gold mb-1"></i><p>Listrik tersedia</p>
+                        </div>
+                        <div class="flex-1 bg-light-green rounded-lg p-3 text-center">
+                            <i class="fas fa-wifi text-gold mb-1"></i><p>Internet tersedia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lokasi -->
+    <section class="py-16 bg-light-green">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold mb-4 text-gray-800">Lokasi Sekolah</h3>
+                <div class="rounded-lg overflow-hidden" style="height: 400px;">
+                    <iframe src="https://www.google.com/maps?q=-7.4558095,109.4663319&hl=id&z=17&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Lokasi SDN 3 Kaliwinasuh"></iframe>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="index.html" class="inline-block bg-gold text-white px-8 py-3 rounded-full font-medium hover:bg-opacity-90 transition-all">
+                    <i class="fas fa-arrow-left mr-2"></i>Kembali ke Beranda
+                </a>
+            </div>
+            <p class="text-center text-xs text-gray-500 mt-6">
+                Sumber data: Kemendikdasmen melalui data.sekolah-kita.net (diperbarui terakhir Maret 2021).
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center space-x-3 mb-2">
+                        <div class="w-10 h-10 bg-gold rounded-full flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">SDN 3 Kaliwinasuh</h3>
+                    </div>
+                    <p class="text-gray-400">Sekolah Ramah Anak dan Berprestasi</p>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="text-gray-400 mb-2">&copy; 2026 SDN 3 Kaliwinasuh. Hak Cipta Dilindungi.</p>
+                    <p class="text-gray-400 text-sm">Dikembangkan dengan <i class="fas fa-heart text-red-500"></i> untuk pendidikan Indonesia</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function () {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('navbar-scrolled', window.scrollY > 50);
+        });
+
+        const mobileMenu = document.getElementById('mobile-menu');
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => mobileMenu.classList.add('active'));
+        document.getElementById('close-menu-btn').addEventListener('click', () => mobileMenu.classList.remove('active'));
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('active')));
+    </script>
+</body>
+</html>
